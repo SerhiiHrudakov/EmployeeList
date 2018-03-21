@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import ControlInputView from './../components/ControlInputView';
 import DropDownFilterListView from './../containers/DropDownFilterListView';
 
-import './../../css/ControlUnits.css';
+import './../../css/ControlsStyles.css';
 
 class EmployeesOptionFilter extends Component {
 	constructor(props) {

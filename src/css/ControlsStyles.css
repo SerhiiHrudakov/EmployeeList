@@ -1,0 +1,15 @@
+.employee-option_filter {
+  background-color: beige;
+  text-align: center; }
+  .employee-option_filter .control-input-view,
+  .employee-option_filter .control_dropDown-list {
+    display: inline-block;
+    width: 50%;
+    margin: 20px 0; }
+  .employee-option_filter .control-input-view .view_label {
+    font-size: 14px; }
+  .employee-option_filter .control-input-view .view_input {
+    margin-left: 10px; }
+  @media only screen and (max-width: 659px) {
+    .employee-option_filter {
+      width: 100%; } }

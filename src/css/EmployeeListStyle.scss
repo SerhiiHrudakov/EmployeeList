@@ -1,0 +1,92 @@
+/* Employee List styles */
+.employee-list {
+	margin-top: 5px;
+	max-width: 820px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+
+	@media only screen and (max-width: 659px) {
+		max-width: 400px;
+	}
+
+	@media only screen and (min-width: 660px) {
+		.employee_list-item-view {
+			width: calc(50% - 10px);
+		}
+	}
+
+	.employee_list-item-view {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		max-height: 120px;
+		max-width: 400px;
+		margin: 0 5px;
+		text-align: left;
+		background-color: bisque;
+		box-sizing: border-box;
+
+		.view_picture {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			float: left;
+			padding: 10px;
+			text-align: center;
+			background-color: beige;
+
+			.picture-image {
+				max-height: 100%;
+				max-width: 100%;
+				vertical-align: middle;
+			}
+		}
+
+		.view_info {
+			display: inline-block;
+			position: absolute;
+			bottom: 10px;
+
+			.info_name {
+				margin-bottom: 5px;
+			}
+
+			.info_role h4 {
+				min-width: 65%;
+			}
+
+			.info_role a {
+				float: left;
+			}
+
+			a {
+				font-size: 12px;
+				color: #222222;
+				width: 30px;
+			}
+
+			h3,h4,a {
+				display: inline-block;
+				margin: 0 0 0 10px;
+			}
+		}
+
+		.view_logo {
+			position: absolute;
+			max-width: 40px;
+			right: 10px;
+			top: 10px;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+
+
+

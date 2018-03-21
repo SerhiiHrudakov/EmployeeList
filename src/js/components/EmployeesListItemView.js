@@ -3,8 +3,6 @@
  */
 import React, { Component } from 'react';
 
-import './../../css/Employee.css';
-
 class EmployeesListItemView extends Component {
 	render() {
 		return (

@@ -1,0 +1,58 @@
+.control_dropDown-list {
+  text-align: left; }
+  @media only screen and (max-width: 659px) {
+    .control_dropDown-list {
+      height: 100%; } }
+  .control_dropDown-list .dropDown_option-filter_label,
+  .control_dropDown-list .dropDown_option-filter_input {
+    text-align: left; }
+  .control_dropDown-list .dropDown_option-list {
+    display: inline-block;
+    position: relative;
+    width: 140px;
+    margin-left: 10px; }
+  .control_dropDown-list .dropDown_option-filter_label {
+    display: inline-block;
+    font-size: 14px; }
+  .control_dropDown-list .dropDown_option-filter_input {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-size: 14px;
+    line-height: 14px;
+    vertical-align: middle; }
+  .control_dropDown-list .dropDown_option-filter-reset_btn {
+    margin-left: 10px;
+    background-color: white; }
+  .control_dropDown-list .dropDown-list-item-view {
+    position: absolute;
+    top: 20px;
+    z-index: 10; }
+    .control_dropDown-list .dropDown-list-item-view.closed {
+      display: none;
+      visibility: hidden; }
+    .control_dropDown-list .dropDown-list-item-view.open {
+      display: block;
+      visibility: visible; }
+    .control_dropDown-list .dropDown-list-item-view ul {
+      max-height: 300px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: white;
+      border-color: darkgoldenrod;
+      border-radius: 4px;
+      border-width: 2px;
+      border-style: ridge; }
+      .control_dropDown-list .dropDown-list-item-view ul a {
+        display: block;
+        padding: 5px;
+        font-size: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        text-align: left; }
+        .control_dropDown-list .dropDown-list-item-view ul a:hover {
+          cursor: pointer;
+          background-color: grey; }

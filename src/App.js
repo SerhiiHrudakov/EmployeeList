@@ -8,7 +8,6 @@ import ServiceSettings from './js/services/ServiceSettings';
 
 import './css/App.css';
 import './css/common.css';
-import './css/MediaQueries.css';
 
 class App extends Component {
 	constructor(props) {

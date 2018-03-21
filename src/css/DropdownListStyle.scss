@@ -1,29 +1,45 @@
-.control_dropdown-list-unit {
+.control_dropDown-list {
 	text-align: left;
 
-	.dropdown_option-filter_input,
-	.dropdown_reset-option-filter {
+	@media only screen and (max-width: 659px) {
+		height: 100%;
+	}
+
+	.dropDown_option-filter_label,
+	.dropDown_option-filter_input {
 		text-align: left;
 	}
 
-	.dropdown_option-filter_input {
-		width: 200px;
+	.dropDown_option-list {
+		display: inline-block;
+		position: relative;
+		width: 140px;
+		margin-left: 10px;
 	}
 
-	.dropdown_reset-option-filter {
-		width: 120px;
+	.dropDown_option-filter_label {
+		display: inline-block;
+		font-size: 14px;
+	}
+
+	.dropDown_option-filter_input {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		border: none;
+		font-size: 14px;
+		line-height: 14px;
+		vertical-align: middle;
+	}
+
+	.dropDown_option-filter-reset_btn {
 		margin-left: 10px;
 		background-color: white;
 	}
 
-	.dropdown_list {
-		position: relative;
-		width: 100%;
-	}
-
-	.list-unit {
+	.dropDown-list-item-view {
 		position: absolute;
-		top: 0;
+		top: 20px;
 		z-index: 10;
 
 		&.closed {
@@ -37,7 +53,6 @@
 		}
 
 		ul {
-			width: 200px;
 			max-height: 300px;
 			list-style: none;
 			padding: 0;
