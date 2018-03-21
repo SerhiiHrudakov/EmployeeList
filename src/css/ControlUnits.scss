@@ -1,24 +1,10 @@
-
-
-.control-unit {
-    display: inline-block;
-    width: 50%;
-  height: 100px;
-}
-
+/* Controls units styles */
+.control-unit,
 .control_dropdown-list-unit {
 	display: inline-block;
 	width: 50%;
-}
-
-.control-unit {
-	display: inline-block;
-	width: 50%;
-}
-
-.control_dropdown-list-unit {
-	display: inline-block;
-	width: 50%;
+	height: 100px;
+	text-align: left;
 }
 
 .unit_label {
@@ -34,10 +20,6 @@
     border-color: #222222;
     text-align: center;
     font-size: 14px;
-}
-
-.control-unit {
-    width: 50%;
 }
 
 

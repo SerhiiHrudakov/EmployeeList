@@ -3,8 +3,6 @@
  */
 import React, { Component } from 'react';
 
-import './../../css/ControlUnits.css';
-
 class ControlInputUnit extends Component {
 	render() {
 		return (
