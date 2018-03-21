@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
-import EmployeeList from './js/containers/EmployeeList';
-import Filter from './js/containers/Filter';
+import EmployeesList from './js/containers/EmployeesList';
+import EmployeesOptionFilter from './js/containers/EmployeesOptionFilter';
 
 import RequestService from './js/services/RequestService';
 import ServiceSettings from './js/services/ServiceSettings';
 
 import './css/App.css';
 import './css/common.css';
+import './css/MediaQueries.css';
 
 class App extends Component {
 	constructor(props) {
@@ -16,8 +17,8 @@ class App extends Component {
 		this.loadedData = [];
 
 		this.state = {
-			employyeListData:[],
-			roleOptionsList :[]
+			employeesListData:[],
+			roleOptionsList  :[]
 		};
 
 		this.applyFilter = this.applyFilter.bind(this);
@@ -33,8 +34,8 @@ class App extends Component {
 				this.loadedData = this.checkCompanyLogo(data.employees);
 
 				this.setState({
-					employyeListData: this.loadedData,
-					roleOptionsList : roleOptions
+					employeesListData: this.loadedData,
+					roleOptionsList  : roleOptions
 				});
 			}
 		});
@@ -43,8 +44,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Filter roleOptions={this.state.roleOptionsList} applyFilter={this.applyFilter} />
-				<EmployeeList employyeListData={this.state.employyeListData} />
+				<EmployeesOptionFilter roleOptions={this.state.roleOptionsList} applyFilter={this.applyFilter} />
+				<EmployeesList employyeListData={this.state.employeesListData} />
 			</div>
 		);
 	}
