@@ -1,29 +1,40 @@
 {
   "employes": [
     {
+      "name": "Ousen",
+      "role": "super cool guy hoo drinks a lot of coffy",
+      "pic" : "img/redfox.jpg",
+      "logo": "img/frog.jpg"
+    },
+    {
       "name": "Alex",
       "role": "developer",
-      "pic" : "img/cat.jpg"
+      "pic" : "img/cat.jpg",
+      "logo": "img/frog.jpg"
     },
     {
       "name": "Misha",
       "role": "sr developer",
-      "pic" : "img/lion.jpg"
+      "pic" : "img/lion.jpg",
+      "logo": "img/frog.jpg"
     },
     {
       "name": "Serhii",
       "role": "jr developer",
-      "pic" : "img/monkey.jpg"
+      "pic" : "img/monkey.jpg",
+      "logo": "img/frog.jpg"
     },
     {
       "name": "Andree",
       "role": "hr",
-      "pic" : "img/sova.jpg"
+      "pic" : "img/sova.jpg",
+      "logo": "img/frog.jpg"
     },
     {
       "name": "Olya",
       "role": "developer",
-      "pic" : "img/slonik.jpg"
+      "pic" : "img/slonik.jpg",
+      "logo": "img/frog.jpg"
     }
   ]
 }

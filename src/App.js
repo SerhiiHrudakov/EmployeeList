@@ -28,7 +28,7 @@ class App extends Component {
 		var data = file.employes; //RequestService.loadData(ServiceSettings.EMPLOYERS_LIST_LINK);
 		var roleOptions = this.getUniqueRoles(data);
 
-		this.loadedData = data;
+		this.loadedData = this.checkCompanyLogo(data);
 
 		this.setState({
 			employyeListData: this.loadedData,
@@ -104,6 +104,16 @@ class App extends Component {
 		}
 
 		return [];
+	}
+
+	checkCompanyLogo(array) {
+		return array.map((item) => {
+			if (!item.hasOwnProperty('logo')) {
+				item.logo = "img/logo.jpg";
+			}
+
+			return item;
+		})
 	}
 }
 
