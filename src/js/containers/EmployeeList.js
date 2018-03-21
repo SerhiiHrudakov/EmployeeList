@@ -14,7 +14,7 @@ class EmployeeList extends Component {
 				<ul>
 					{
 						this.props.employyeListData.map((listItem, index) =>
-							<EmployeeListItem key={index} picture={listItem.pic} name={listItem.name} role={listItem.role} companyLogo={listItem.logo}/>
+							<EmployeeListItem key={listItem.name} picture={listItem.profileImage} name={listItem.name} role={listItem.role} companyLogo={listItem.logo}/>
 						)
 					}
 				</ul>

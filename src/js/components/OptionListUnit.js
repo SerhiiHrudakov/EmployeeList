@@ -10,7 +10,7 @@ class OptionListUnit extends Component {
 				<ul>
 					{
 						this.props.optionList.map((listItem, index) =>
-							<a key={index} onClick={this.props.selectListItemCallback}>{listItem.role}</a>
+							<a key={index} onMouseDown={this.props.selectListItemCallback}>{listItem}</a>
 						)
 					}
 				</ul>

@@ -5,6 +5,8 @@ import React, { Component } from 'react';
 
 import OptionListUnit from './../components/OptionListUnit';
 
+import './../../css/DropdownList.css';
+
 class ControlFilterListUnit extends Component {
 	constructor(props) {
 		super(props);
@@ -21,14 +23,17 @@ class ControlFilterListUnit extends Component {
 		this.resetListOptionFilter = this.resetListOptionFilter.bind(this);
 		this.openDropDownList = this.openDropDownList.bind(this);
 		this.closeDropDownList = this.closeDropDownList.bind(this);
+		this.selectListItemCallback = this.selectListItemCallback.bind(this);
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.optionList = nextProps.optionList;
+		if (!this.optionList.length) {
+			this.optionList= nextProps.optionList;
 
-		this.setState({
-			filteredOptionList: this.optionList
-		})
+			this.setState({
+				filteredOptionList: this.optionList
+			});
+		}
 	}
 
 	render() {
@@ -39,7 +44,9 @@ class ControlFilterListUnit extends Component {
 				       onClick={this.openDropDownList}
 				       onBlur={this.closeDropDownList}/>
 				<button className="dropdown_reset-option-filter" value="resetBtn" onClick={this.resetListOptionFilter}>Reset options filter</button>
-				<OptionListUnit listState={this.state.listStateClassName} optionList={this.state.filteredOptionList} selectListItemCallback={this.props.selectOptionCallback}/>
+				<div className="dropdown_list">
+					<OptionListUnit listState={this.state.listStateClassName} optionList={this.state.filteredOptionList} selectListItemCallback={this.selectListItemCallback}/>
+				</div>
 			</div>
 		);
 	}
@@ -47,7 +54,7 @@ class ControlFilterListUnit extends Component {
 	filterOptionInputChange(e) {
 		var filter = e.currentTarget.value;
 		var filteredOptionList = this.optionList.filter((item) => {
-			return item.role.includes(filter);
+			return item.includes(filter);
 		});
 
 		this.setState({
@@ -61,12 +68,20 @@ class ControlFilterListUnit extends Component {
 		this.props.resetFilter(e);
 	}
 
+	selectListItemCallback(e) {
+		document.getElementById(this.props.uniqId).value = e.currentTarget.text;
+
+		this.props.selectOptionCallback(e);
+
+		this.closeDropDownList();
+	}
+
 	openDropDownList() {
 		this.setState({
 			listStateClassName: 'open'
 		});
 	}
-	
+
 	closeDropDownList() {
 		this.setState({
 			listStateClassName: 'closed'

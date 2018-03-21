@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 import ControlInputUnit from './../components/ControlInputUnit';
 import ControlFilterListUnit from './../containers/ControlFilterListUnit';
 
-import './../../css/Filter.css';
 import './../../css/ControlUnits.css';
 
 class Filter extends Component {
