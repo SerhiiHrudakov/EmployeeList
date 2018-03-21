@@ -10,15 +10,20 @@ class EmployeeListItem extends Component {
 		return (
 			<div className="employee_list-item">
 				<div className="list-item_picture">
-					<img className="picture-image" alt="employee_image" src={this.props.picture}/>
+					<img className="picture-image" alt="employee" src={this.props.picture}/>
 				</div>
 				<div className="list-item_info">
 					<div className="info_name">
-						<h1>{ this.props.name }</h1>
+						<a>Name</a>
+						<h3>{ this.props.name }</h3>
 					</div>
 					<div className="info_role">
-						<h3>{ this.props.role }</h3>
+						<a>Role</a>
+						<h4>{ this.props.role }</h4>
 					</div>
+				</div>
+				<div className="list-item_logo">
+					<img alt="company-logo" src={this.props.companyLogo} />
 				</div>
 			</div>
 		);
