@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 class DropDownOptionListView extends Component {
 	render() {
 		return (
-			<div className={this.props.dropDownOptionListState + " dropdown-list-item-view"} >
+			<div className={this.props.dropDownOptionListState + " dropDown-list-item-view"} >
 				<ul>
 					{
 						this.props.dropDownOptionList.map((listItem, index) =>

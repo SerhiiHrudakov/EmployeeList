@@ -38,16 +38,18 @@ class DropDownFilterListView extends Component {
 
 	render() {
 		return (
-			<div className="control_dropdown-list">
-				<label className="dropdown_option-filter_label">{this.props.controlLabel}</label>
-				<input className="dropdown_option-filter_input" id={this.props.uniqueId} type="text" placeholder="Search.."
-				       onChange={this.changeDropDownOptionList}
-				       onClick={this.openDropDownOptionList}
-				       onBlur={this.closeDropDownOptionList}/>
-				<button className="dropdown_option-filter-reset_btn" value="resetBtn" onClick={this.resetDropDownOptionList}>Reset</button>
-				<div className="dropdown_option-list">
+			<div className="control_dropDown-list">
+				<label className="dropDown_option-filter_label">{this.props.controlLabel}</label>
+				<div className="dropDown_option-list">
+					<input className="dropDown_option-filter_input" id={this.props.uniqueId} type="text" placeholder="Search.."
+					       onChange={this.changeDropDownOptionList}
+					       onClick={this.openDropDownOptionList}
+					       onBlur={this.closeDropDownOptionList}/>
 					<DropDownOptionListView dropDownOptionListState={this.state.dropDownOptionListState} dropDownOptionList={this.state.filteredOptionList} selectDropDownListOption={this.selectDropDownListOption}/>
 				</div>
+				
+				<button className="dropDown_option-filter-reset_btn" value="resetBtn" onClick={this.resetDropDownOptionList}>Reset</button>
+				
 			</div>
 		);
 	}
@@ -64,13 +66,13 @@ class DropDownFilterListView extends Component {
 	}
 
 	resetDropDownOptionList(e) {
-		document.getElementById(this.props.uniqId).value = '';
+		document.getElementById(this.props.uniqueId).value = '';
 
 		this.props.resetFilter(e);
 	}
 
 	selectDropDownListOption(e) {
-		document.getElementById(this.props.uniqId).value = e.currentTarget.text;
+		document.getElementById(this.props.uniqueId).value = e.currentTarget.text;
 
 		this.props.selectFilter(e);
 
@@ -79,13 +81,13 @@ class DropDownFilterListView extends Component {
 
 	openDropDownOptionList() {
 		this.setState({
-			listStateClassName: 'open'
+			dropDownOptionListState: 'open'
 		});
 	}
 
 	closeDropDownOptionList() {
 		this.setState({
-			listStateClassName: 'closed'
+			dropDownOptionListState: 'closed'
 		});
 	}
 }
