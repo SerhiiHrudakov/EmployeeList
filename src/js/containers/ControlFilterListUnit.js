@@ -5,8 +5,6 @@ import React, { Component } from 'react';
 
 import OptionListUnit from './../components/OptionListUnit';
 
-import '../../css/ControlUnits.css';
-
 class ControlFilterListUnit extends Component {
 	constructor(props) {
 		super(props);
