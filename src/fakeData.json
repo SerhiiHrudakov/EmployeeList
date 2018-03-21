@@ -1,0 +1,30 @@
+{
+  "employes": [
+    {
+      "name": "Alex",
+      "role": "developer",
+      "pic" : "img/cat.jpg"
+    },
+    {
+      "name": "Misha",
+      "role": "sr developer",
+      "pic" : "img/lion.jpg"
+    },
+    {
+      "name": "Serhii",
+      "role": "jr developer",
+      "pic" : "img/monkey.jpg"
+    },
+    {
+      "name": "Andree",
+      "role": "hr",
+      "pic" : "img/sova.jpg"
+    },
+    {
+      "name": "Olya",
+      "role": "developer",
+      "pic" : "img/slonik.jpg"
+    }
+  ]
+}
+
