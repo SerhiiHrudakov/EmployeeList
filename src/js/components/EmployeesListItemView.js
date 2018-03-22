@@ -19,6 +19,17 @@ class EmployeesListItemView extends Component {
 						<a>Role</a>
 						<h4>{ this.props.role }</h4>
 					</div>
+					{
+						this.props.skills.length ?
+							<div className="info_skills">
+								<a>Skills</a>
+								<h4>{ this.props.skills.join() }</h4>
+							</div> : ''
+					}
+					<div className="info_bio">
+						<a>Bio</a>
+						<p>{ this.props.bio }</p>
+					</div>
 				</div>
 				<div className="view_logo">
 					<img className="logo-image" alt="company-logo" src={this.props.companyLogo} />

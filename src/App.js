@@ -73,8 +73,8 @@ class App extends Component {
 			roleOptionsList = this.getUniqueRoles(filteredList);
 
 			this.setState({
-				employyeListData: filteredList,
-				roleOptionsList : roleOptionsList
+				employeesListData: filteredList,
+				roleOptionsList  : roleOptionsList
 			});
 		}
 		

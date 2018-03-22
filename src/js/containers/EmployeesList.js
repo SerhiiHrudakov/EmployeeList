@@ -13,7 +13,13 @@ class EmployeesList extends Component {
 			<div className="employee-list">
 				{
 					this.props.employyeListData.map((listItem) =>
-						<EmployeesListItemView key={listItem.name} picture={listItem.profileImage} name={listItem.name} role={listItem.role} companyLogo={listItem.logo}/>
+						<EmployeesListItemView key={listItem.name}
+						                       picture={listItem.profileImage}
+						                       name={listItem.name}
+						                       role={listItem.role}
+						                       companyLogo={listItem.logo}
+						                       bio={listItem.bio}
+						                       skills={listItem.skills}/>
 					)
 				}
 			</div>
