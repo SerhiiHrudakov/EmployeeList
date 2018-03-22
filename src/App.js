@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
-import EmployeeList from './js/containers/EmployeeList';
-import Filter from './js/containers/Filter';
+import EmployeesList from './js/containers/EmployeesList';
+import EmployeesOptionFilter from './js/containers/EmployeesOptionFilter';
 
-// import RequestService from './js/services/RequestService';
-// import ServiceSettings from './js/services/ServiceSettings';
-
-import file from './fakeData.json';
+import RequestService from './js/services/RequestService';
+import Settings from './js/services/Settings';
 
 import './css/App.css';
+import './css/common.css';
 
 class App extends Component {
 	constructor(props) {
@@ -17,30 +16,36 @@ class App extends Component {
 		this.loadedData = [];
 
 		this.state = {
-			employyeListData:[],
-			roleOptionsList :[]
+			employeesListData:[],
+			roleOptionsList  :[]
 		};
 
 		this.applyFilter = this.applyFilter.bind(this);
+		this.openBioInfoScreen = this.openBioInfoScreen.bind(this);
 	}
 
 	componentDidMount() {
-		var data = file.employes; //RequestService.loadData(ServiceSettings.EMPLOYERS_LIST_LINK);
-		var roleOptions = this.getUniqueRoles(data);
+		var roleOptions;
 
-		this.loadedData = data;
+		RequestService.loadData(Settings.EMPLOYERS_LIST_LINK, (data) => {
+			if (data && data.employees) {
+				roleOptions = this.getUniqueRoles(data.employees);
 
-		this.setState({
-			employyeListData: this.loadedData,
-			roleOptionsList : roleOptions
+				this.loadedData = this.checkCompanyLogo(data.employees);
+
+				this.setState({
+					employeesListData: this.loadedData,
+					roleOptionsList  : roleOptions
+				});
+			}
 		});
 	}
 	
 	render() {
 		return (
 			<div className="App">
-				<Filter roleOptions={this.state.roleOptionsList} applyFilter={this.applyFilter} />
-				<EmployeeList employyeListData={this.state.employyeListData} />
+				<EmployeesOptionFilter roleOptions={this.state.roleOptionsList} applyFilter={this.applyFilter} />
+				<EmployeesList employyeListData={this.state.employeesListData} openInfoScreenView={this.openBioInfoScreen}/>
 			</div>
 		);
 	}
@@ -69,8 +74,8 @@ class App extends Component {
 			roleOptionsList = this.getUniqueRoles(filteredList);
 
 			this.setState({
-				employyeListData: filteredList,
-				roleOptionsList : roleOptionsList
+				employeesListData: filteredList,
+				roleOptionsList  : roleOptionsList
 			});
 		}
 		
@@ -84,26 +89,28 @@ class App extends Component {
 	}
 
 	getUniqueRoles(array) {
-		var obj = {};
-		var arr = [];
-
 		if (array.length) {
-			// const map = array.map(i => i.role)
-			// 		.reduce((map, item) => { map[item] = true; }, {});
-			
-			arr = array.filter((item) => {
-				if (!obj.hasOwnProperty(item.role)) {
-					obj[item.role] = true;
-					return true;
-				}
+			const map = array.map(i => i.role)
+					.reduce((map, item) => { map[item] = true; return map }, {});
 
-				return false;
-			});
-
-			return arr;
+			return Object.keys(map);
 		}
 
 		return [];
+	}
+
+	checkCompanyLogo(array) {
+		return array.map((item) => {
+			if (!item.hasOwnProperty('logo')) {
+				item.logo = "img/logo.jpg";
+			}
+
+			return item;
+		})
+	}
+
+	openBioInfoScreen(id) {
+	
 	}
 }
 

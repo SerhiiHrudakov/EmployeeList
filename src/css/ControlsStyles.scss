@@ -1,0 +1,50 @@
+
+.employee-option_filter {
+	background-color: beige;
+	text-align: center;
+
+	.control-input-view,
+	.control_dropDown-list {
+		display: inline-block;
+		width: 49%;
+		margin: 20px 0;
+	}
+
+	.control_dropDown-list {
+		margin-left: 10px;
+	}
+
+	@media only screen and (max-width: 590px) {
+		.control-input-view,
+		.control_dropDown-list {
+			width: 100%;
+			text-align: center;
+			font-size: 14px;
+		}
+
+		.control_dropDown-list {
+			margin-top: 0;
+			margin-left: 0;
+		}
+	}
+
+	.control-input-view {
+		.view_label {
+			font-size: 14px;
+		}
+
+		.view_input {
+			margin-left: 10px;
+		}
+	}
+
+	@media only screen and (max-width: 659px) {
+		width: 100%;
+	}
+
+	@media only screen and (min-width: 660px) {
+		//margin-left: 5px;
+	}
+}
+
+

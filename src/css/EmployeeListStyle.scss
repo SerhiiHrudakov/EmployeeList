@@ -1,0 +1,122 @@
+/* Employee List styles */
+.employee-list {
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+
+	@media only screen and (max-width: 799px) {
+		max-width: 600px;
+
+		.employee_list-item-view {
+			width: 100%;
+		}
+	}
+
+	@media only screen and (min-width: 800px) {
+		max-width: 960px;
+
+		.employee_list-item-view {
+			width: calc(50% - 10px);
+			margin: 0 5px;
+		}
+	}
+
+	.smart-image-view {
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		line-height: 100px;
+		float: left;
+		padding: 10px;
+		text-align: center;
+		background-color: beige;
+
+		.picture-image {
+			max-height: 100%;
+			max-width: 100%;
+			vertical-align: middle;
+		}
+	}
+
+	.employee_list-item-view {
+		display: inline-block;
+		position: relative;
+		text-align: left;
+		background-color: bisque;
+		box-sizing: border-box;
+
+		.view_info {
+			display: inline-block;
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			left: 120px;
+
+			@media only screen and (max-width: 400px) {
+				h3,h4 {
+					font-size: 14px;
+				}
+			}
+
+			.info_name {
+				margin-bottom: 5px;
+			}
+
+			.info_role {
+				margin-bottom: 5px;
+			}
+
+			.info_skills {
+				font-size: 12px;
+			}
+
+			.info_bio {
+				display: none;
+
+				p {
+					font-size: 12px;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+			}
+
+			a {
+				font-size: 12px;
+				color: #222222;
+				width: 30px;
+			}
+
+			h3,h4,a {
+				display: inline-block;
+				margin: 0 0 0 10px;
+			}
+
+			h4 {
+				position: absolute;
+				right: 0;
+				left: 40px;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+		}
+
+		.view_logo {
+			position: absolute;
+			max-width: 40px;
+			right: 10px;
+			top: 10px;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+
+
+
