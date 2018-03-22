@@ -15,25 +15,25 @@
       .employee-list .employee_list-item-view {
         width: calc(50% - 10px);
         margin: 0 5px; } }
+  .employee-list .smart-image-view {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    float: left;
+    padding: 10px;
+    text-align: center;
+    background-color: beige; }
+    .employee-list .smart-image-view .picture-image {
+      max-height: 100%;
+      max-width: 100%;
+      vertical-align: middle; }
   .employee-list .employee_list-item-view {
     display: inline-block;
     position: relative;
     text-align: left;
     background-color: bisque;
     box-sizing: border-box; }
-    .employee-list .employee_list-item-view .view_picture {
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      line-height: 100px;
-      float: left;
-      padding: 10px;
-      text-align: center;
-      background-color: beige; }
-      .employee-list .employee_list-item-view .view_picture .picture-image {
-        max-height: 100%;
-        max-width: 100%;
-        vertical-align: middle; }
     .employee-list .employee_list-item-view .view_info {
       display: inline-block;
       position: absolute;

@@ -4,7 +4,7 @@ import EmployeesList from './js/containers/EmployeesList';
 import EmployeesOptionFilter from './js/containers/EmployeesOptionFilter';
 
 import RequestService from './js/services/RequestService';
-import ServiceSettings from './js/services/ServiceSettings';
+import Settings from './js/services/Settings';
 
 import './css/App.css';
 import './css/common.css';
@@ -21,12 +21,13 @@ class App extends Component {
 		};
 
 		this.applyFilter = this.applyFilter.bind(this);
+		this.openBioInfoScreen = this.openBioInfoScreen.bind(this);
 	}
 
 	componentDidMount() {
 		var roleOptions;
 
-		RequestService.loadData(ServiceSettings.EMPLOYERS_LIST_LINK, (data) => {
+		RequestService.loadData(Settings.EMPLOYERS_LIST_LINK, (data) => {
 			if (data && data.employees) {
 				roleOptions = this.getUniqueRoles(data.employees);
 
@@ -44,7 +45,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<EmployeesOptionFilter roleOptions={this.state.roleOptionsList} applyFilter={this.applyFilter} />
-				<EmployeesList employyeListData={this.state.employeesListData} />
+				<EmployeesList employyeListData={this.state.employeesListData} openInfoScreenView={this.openBioInfoScreen}/>
 			</div>
 		);
 	}
@@ -106,6 +107,10 @@ class App extends Component {
 
 			return item;
 		})
+	}
+
+	openBioInfoScreen(id) {
+	
 	}
 }
 

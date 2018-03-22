@@ -22,29 +22,29 @@
 		}
 	}
 
+	.smart-image-view {
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		line-height: 100px;
+		float: left;
+		padding: 10px;
+		text-align: center;
+		background-color: beige;
+
+		.picture-image {
+			max-height: 100%;
+			max-width: 100%;
+			vertical-align: middle;
+		}
+	}
+
 	.employee_list-item-view {
 		display: inline-block;
 		position: relative;
 		text-align: left;
 		background-color: bisque;
 		box-sizing: border-box;
-
-		.view_picture {
-			display: inline-block;
-			width: 100px;
-			height: 100px;
-			line-height: 100px;
-			float: left;
-			padding: 10px;
-			text-align: center;
-			background-color: beige;
-
-			.picture-image {
-				max-height: 100%;
-				max-width: 100%;
-				vertical-align: middle;
-			}
-		}
 
 		.view_info {
 			display: inline-block;

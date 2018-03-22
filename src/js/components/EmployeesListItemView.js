@@ -2,14 +2,16 @@
  * Created by Serhiy on 20.03.18.
  */
 import React, { Component } from 'react';
+import SmartImageView from './../containers/SmartImageView';
 
 class EmployeesListItemView extends Component {
 	render() {
 		return (
 			<div className="employee_list-item-view">
-				<div className="view_picture">
-					<img className="picture-image" alt="employee" src={this.props.picture}/>
-				</div>
+				<SmartImageView pictureSrc={this.props.picture}/>
+				{/*<div className="view_picture">*/}
+					{/*<img className="picture-image" alt="employee" src={this.props.picture} onLoad={this.checkImage()}/>*/}
+				{/*</div>*/}
 				<div className="view_info">
 					<div className="info_name">
 						<a>Name</a>
@@ -26,10 +28,6 @@ class EmployeesListItemView extends Component {
 								<h4>{ this.props.skills.join() }</h4>
 							</div> : ''
 					}
-					<div className="info_bio">
-						<a>Bio</a>
-						<p>{ this.props.bio }</p>
-					</div>
 				</div>
 				<div className="view_logo">
 					<img className="logo-image" alt="company-logo" src={this.props.companyLogo} />

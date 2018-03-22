@@ -13,7 +13,8 @@ class EmployeesList extends Component {
 			<div className="employee-list">
 				{
 					this.props.employyeListData.map((listItem) =>
-						<EmployeesListItemView key={listItem.name}
+						<EmployeesListItemView onClick={this.props.openInfoScreenView}
+						                       key={listItem.name}
 						                       picture={listItem.profileImage}
 						                       name={listItem.name}
 						                       role={listItem.role}
