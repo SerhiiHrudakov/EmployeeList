@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux'
+import { fetchData } from './js/services/redux/actions';
+
 import EmployeesList from './js/containers/EmployeesList';
 import EmployeesOptionFilter from './js/containers/EmployeesOptionFilter';
 
@@ -8,6 +11,18 @@ import Settings from './js/services/Settings';
 
 import './css/App.css';
 import './css/common.css';
+
+function mapStateToProps (state) {
+	return {
+		appData: state.appData
+	}
+}
+
+function mapDispatchToProps (dispatch) {
+	return {
+		fetchData: () => dispatch(fetchData())
+	}
+}
 
 class App extends Component {
 	constructor(props) {
@@ -25,11 +40,9 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		var roleOptions;
-
 		RequestService.loadData(Settings.EMPLOYERS_LIST_LINK, (data) => {
 			if (data && data.employees) {
-				roleOptions = this.getUniqueRoles(data.employees);
+				var roleOptions = this.getUniqueRoles(data.employees);
 
 				this.loadedData = this.checkCompanyLogo(data.employees);
 
@@ -40,7 +53,7 @@ class App extends Component {
 			}
 		});
 	}
-	
+
 	render() {
 		return (
 			<div className="App">
@@ -114,4 +127,7 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(App);
